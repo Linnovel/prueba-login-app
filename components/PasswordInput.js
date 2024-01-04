@@ -3,10 +3,14 @@ import React from 'react'
 import { Feather } from '@expo/vector-icons';
 import { useState } from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
+import { scale, verticalScale, moderateScale, useDimensions, ScaledSheet } from 'react-native-size-matters';
+
 
 export default function PasswordInput() {
     const [password, setPassword] = useState('');
+
     const [passwordError, setPasswordError] = useState('');
+
     const handlePasswordChange = (text) => {
         setPassword(text);
         setPasswordError('');
@@ -48,46 +52,46 @@ export default function PasswordInput() {
     )
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     inputContainer: {
-        padding: 12
+        padding: '12@s'
     },
     input: {
-        height: 50,
-        width: 300,
-        borderRadius: 8,
-        borderWidth: 0.9,
+        width: '280@ms',
+        height: '50@vs',
+        borderRadius: '8@s',
+        borderWidth: '0.9@s',
         borderColor: 'rgba(255,255,255, 0.50)',
-        paddingHorizontal: 36,
+        paddingHorizontal: '48@ms',
         backgroundColor: 'rgba(99, 97, 102, 0.3)',
     },
     textStyle: {
         color: '#A4A4A4',
-        paddingBottom: 10
+        paddingBottom: '10@ms'
     },
     error: {
         color: 'red',
-        fontSize: 12,
+        fontSize: '12@s',
     },
     button: {
         justifyContent: 'center',
-        paddingTop: 16
+        paddingTop: '16@vs'
     },
     buttonText: {
         color: 'white',
-        fontSize: 18,
+        fontSize: '18@ms',
         fontWeight: 'bold',
         alignSelf: 'center',
-        paddingTop: 14
+        paddingTop: '11@vs'
     },
     buttonGradient: {
-        width: 300,
-        height: 50,
-        borderRadius: 25,
+        width: '280@ms',
+        height: '50@vs',
+        borderRadius: '25@s',
     },
     keyIconContainer: {
         position: 'absolute',
-        top: 54,
-        left: 22
+        top: '54@vs',
+        left: '28@vs'
     }
 })
